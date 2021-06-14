@@ -1,6 +1,6 @@
 //Base_URL
-const base_url = `https://api.rawg.io/api/key=${process.env.REACT_APP_GIMU_API}`;
-
+//const base_url = `https://api.rawg.io/api/key=${process.env.REACT_APP_GIMU_API}`;
+const base_url = `https://api.rawg.io/api/games?key=82bc856577694520879ca3ed8c8d4e2f`;
 //Getting the date
 const getCurrentMonth = () => {
   const month = new Date().getMonth() + 1;
@@ -30,7 +30,15 @@ const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`;
 const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 
 //Popular games
-const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size10`;
+const popular_games = `&dates=${lastYear},${currentDate}&ordering=-rating&page_size10`;
+//Upcoming games
+const upcoming_games = `&dates=${currentDate},${nextYear}&ordering=-added&page_size10`;
+//New games
+const new_games = `&dates=${lastYear},${currentDate}&ordering=-released&page_size10`;
 
 export const popularGamesUrl = () => `${base_url}${popular_games}`;
+export const upcomingGamesUrl = () => `${base_url}${upcoming_games}`;
+export const newGamesUrl = () => `${base_url}${new_games}`;
 
+//export const popularGamesUrl = () =>
+//  "https://api.rawg.io/api/games?key=82bc856577694520879ca3ed8c8d4e2f&dates=2019-09-01,2019-09-30&platforms=18,1,7";
