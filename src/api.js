@@ -40,5 +40,14 @@ export const popularGamesUrl = () => `${base_url}${popular_games}`;
 export const upcomingGamesUrl = () => `${base_url}${upcoming_games}`;
 export const newGamesUrl = () => `${base_url}${new_games}`;
 
+//GAME DETAILS
+export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}`;
+//Game ScreenShots
+export const gameScreenshotURL = (game_id) =>
+  `${base_url}games/${game_id}/screenshots`;
+//Searched game
+export const searchGameURL = (game_name) =>
+  `${base_url}games?search=${game_name}&page_size=9`;
+
 //export const popularGamesUrl = () =>
 //  "https://api.rawg.io/api/games?key=82bc856577694520879ca3ed8c8d4e2f&dates=2019-09-01,2019-09-30&platforms=18,1,7";
